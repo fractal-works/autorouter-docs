@@ -26,8 +26,12 @@ signed and notarized by Apple, and move AutoRouter to Applications.
 **Homebrew.**
 
 ```sh
+brew tap fractal-works/tap
+brew trust --tap fractal-works/tap
 brew install --cask fractal-works/tap/autorouter
 ```
+
+Homebrew 7 loads casks from a tap outside Homebrew only after you trust it.
 
 **Ask your coding agent.** Paste this into Codex or Claude Code:
 
