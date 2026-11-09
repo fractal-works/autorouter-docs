@@ -2,7 +2,7 @@
 
 AutoRouter is a Mac app by Fractal Works, Inc. It adds 20+ models to Codex
 and Claude Code, plus one more choice in the model picker: AutoRouter, which
-picks the right model for each turn. It also works in Claude Desktop, T3 and
+picks the right model for each task. It also works in Claude Desktop, T3 and
 Terminal. It uses the ChatGPT and Claude plans you already pay for first.
 
 This repository holds AutoRouter's public docs and its agent setup skill
@@ -72,13 +72,13 @@ AutoRouter's settings switches it back.
 
 ## How routing works
 
-While AutoRouter is the selected model, each turn goes through these steps:
+While AutoRouter is the selected model, each request goes through these steps:
 
-1. **Your rules go first.** If one of your rules applies, it decides the turn.
+1. **Your rules go first.** If one of your rules applies, it decides the model.
    You write rules in plain English, such as "Use Claude Opus 5.5 for UI work"
    or "Prefer GPT-6.1 Sol for code reviews", and you can see how often each
    one is used.
-2. **AutoRouter works out how hard the turn is** and only considers models
+2. **AutoRouter works out how hard the task is** and only considers models
    that clear the quality bar for it. In Claude Code it judges the text you
    typed and leaves out the memory files and reminders Claude Code adds.
 3. **Hard work goes to the most capable model your plans cover**, and to
@@ -90,8 +90,8 @@ A few built-in rules sit under that: unclear work is never treated as a quick
 task, a task that continues keeps its model or moves up, and untested models
 are never picked on their own. An avoid rule is always respected.
 
-Every turn shows the model it ran on, what it cost and why. Choosing a model
-in the picker sends turns straight to it; AutoRouter routes only while it is
+Every request shows the model it ran on, what it cost and why. Choosing a model
+in the picker sends requests straight to it; AutoRouter routes only while it is
 the selected model. If a pick falls short, rate it or choose a model yourself.
 The team reviews real routing decisions and every rating, and tests each new
 model as it becomes available.
@@ -109,7 +109,7 @@ and MiniMax M3.1 Flash pay per use. The lineup changes.
 | Plan       | Price          | What you get                                                                                                                                                                     |
 | ---------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Free       | $0 a month     | Routing across your ChatGPT and Claude plans                                                                                                                                     |
-| Pro        | $50 a month    | Every other model, with $20 of included usage each month. When a ChatGPT or Claude plan hits its limit, Pro keeps those turns going from the monthly usage until the plan resets |
+| Pro        | $50 a month    | Every other model, with $20 of included usage each month. When a ChatGPT or Claude plan hits its limit, Pro keeps those requests going from the monthly usage until the plan resets |
 | Enterprise | Priced by seat | Everything in Pro, plus rollout through Jamf or another MDM, allowed models, team budgets, zero data retention, spend by team, project or ticket, SSO, SCIM and an audit log     |
 
 - Paid models are billed at the provider's price plus 10%, from the included
@@ -157,15 +157,15 @@ No. Free routes across the plans you have. Pro gives every model, with $20 of
 included usage each month, and you can top up any time.
 
 **What happens when my plan hits its limit?**
-On Pro, those turns keep going from the monthly usage until the plan resets.
+On Pro, those requests keep going from the monthly usage until the plan resets.
 If that runs out too, AutoRouter asks you to top up.
 
 **Can I pick the model myself?**
-Yes. Choose any model in the picker and turns go straight to it. AutoRouter
+Yes. Choose any model in the picker and requests go straight to it. AutoRouter
 routes only while it is the selected model.
 
 **How is it different from my app's own Auto mode?**
-You can see which model handled every turn and what it cost, change it with a
+You can see which model handled every request and what it cost, change it with a
 rule or the app's model picker, and use models from every provider.
 
 **Does it ever get the pick wrong?**
