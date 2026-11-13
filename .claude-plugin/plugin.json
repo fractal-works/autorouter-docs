@@ -1,0 +1,10 @@
+{
+  "name": "autorouter",
+  "displayName": "AutoRouter",
+  "description": "Install AutoRouter, the Mac app that picks the model for each Codex, Claude Code and Cursor request, and connect your tools to it.",
+  "author": { "name": "Fractal Works, Inc.", "url": "https://autorouter.com" },
+  "homepage": "https://autorouter.com",
+  "repository": "https://github.com/fractal-works/autorouter-docs",
+  "license": "MIT",
+  "keywords": ["autorouter", "model-routing", "codex", "claude-code", "macos"]
+}

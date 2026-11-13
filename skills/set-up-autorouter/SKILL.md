@@ -5,8 +5,8 @@ description: Install AutoRouter, the Mac app that picks the model for each Codex
 
 # Set up AutoRouter
 
-You are setting up AutoRouter, a Mac app that routes Codex and Claude Code to
-the best model for each prompt. The app writes the configuration. You install
+You are setting up AutoRouter, a Mac app that routes Codex, Claude Code and
+Cursor to the best model for each prompt. The app writes the configuration. You install
 it, guide the person through each sign-in, and confirm it worked. Give one
 short instruction at a time.
 
@@ -50,8 +50,9 @@ ditto "$volume/AutoRouter.app" /Applications/AutoRouter.app && hdiutil detach "$
 ## 4. Run the app's setup
 
 Run `open /Applications/AutoRouter.app`. Ask the person to sign in, allow
-Accessibility, and click Enable for each harness. They can also connect the
-other vendor's plan if offered. Ask them to tell you when the app shows Ready.
+Accessibility, and click Enable for each harness, Cursor included when it is
+installed. They can also connect their other plans (Claude, ChatGPT, Grok or
+Gemini) if offered. Ask them to tell you when the app shows Ready.
 
 ## 5. Confirm
 
