@@ -1,9 +1,10 @@
 # AutoRouter
 
-AutoRouter is a Mac app by Fractal Works, Inc. It adds 20+ models to Codex
-and Claude Code, plus one more choice in the model picker: AutoRouter, which
-picks the right model for each task. It also works in Claude Desktop, T3 and
-Terminal. It uses the ChatGPT and Claude plans you already pay for first.
+AutoRouter is a Mac app by Fractal Works, Inc. It adds 20+ models to Codex,
+Claude Code and Cursor, plus one more choice in the model picker: AutoRouter,
+which picks the right model for each task. It also works in Claude Desktop, T3
+and Terminal. It uses the Claude, ChatGPT, Grok and Gemini plans you already
+pay for first.
 
 This repository holds AutoRouter's public docs and its agent setup skill
 (`skills/set-up-autorouter`). The app is closed source and in beta. Download it from
@@ -55,6 +56,7 @@ app.
 | ------------------- | ------------------------------------------------ |
 | Codex (app and CLI) | Supported                                        |
 | Claude Code (CLI)   | Supported                                        |
+| Cursor              | Supported                                        |
 | Claude Desktop      | Supported                                        |
 | T3                  | Supported                                        |
 | Terminal            | Supported                                        |
@@ -134,7 +136,7 @@ How AutoRouter handles requests and what it keeps:
 No. OpenRouter is a separate company, and its
 [Auto Router](https://openrouter.ai/docs/model-routing) is a model option in
 its API. AutoRouter is a Mac app from Fractal Works that works inside Codex,
-Claude Code and the other tools above.
+Claude Code, Cursor and the other tools above.
 
 **Is it LiteLLM's Claude Code autorouter, claude-code-router, autorouter.aero
 or autorouter.top?**
@@ -198,3 +200,7 @@ See [autorouter.com/comparisons](https://autorouter.com/comparisons).
 - Sales: sales@autorouter.com
 
 AutoRouter is made by Fractal Works, Inc.
+## License
+
+The docs and skill in this repository are under the [MIT License](LICENSE).
+The AutoRouter app is not.
