@@ -1,0 +1,12 @@
+{
+  "name": "fractal-works",
+  "description": "AutoRouter's Claude Code plugin",
+  "owner": { "name": "Fractal Works, Inc.", "email": "support@autorouter.com" },
+  "plugins": [
+    {
+      "name": "autorouter",
+      "source": "./",
+      "description": "Install AutoRouter on a Mac and connect Claude Code, Codex and Cursor to it"
+    }
+  ]
+}

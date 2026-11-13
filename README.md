@@ -34,6 +34,14 @@ brew install --cask fractal-works/tap/autorouter
 
 Homebrew 7 loads casks from a tap outside Homebrew only after you trust it.
 
+**Claude Code plugin.** Install the setup skill, then run it:
+
+```sh
+claude plugin install autorouter --marketplace fractal-works/autorouter-docs
+```
+
+In Claude Code, run `/autorouter:set-up-autorouter`.
+
 **Ask your coding agent.** Paste this into Codex or Claude Code:
 
 ```text
