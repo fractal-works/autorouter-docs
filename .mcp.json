@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "autorouter-models": {
+      "type": "http",
+      "url": "https://api.autorouter.com/v1/mcp/public"
+    }
+  }
+}

@@ -6,7 +6,7 @@
     {
       "name": "autorouter",
       "source": "./",
-      "description": "Install AutoRouter on a Mac and connect Claude Code, Codex and Cursor to it"
+      "description": "Set up AutoRouter on a Mac and look up its models and routing picks over a public MCP server"
     }
   ]
 }

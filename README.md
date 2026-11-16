@@ -1,14 +1,18 @@
 # AutoRouter
 
-AutoRouter is a Mac app by Fractal Works, Inc. It adds 20+ models to Codex,
-Claude Code and Cursor, plus one more choice in the model picker: AutoRouter,
-which picks the right model for each task. It also works in Claude Desktop, T3
-and Terminal. It uses the Claude, ChatGPT, Grok and Gemini plans you already
-pay for first.
+AutoRouter coordinates AI work across the tools you already use. It routes
+each step to the right model, carries context between agents, and helps your
+AI budget go further.
 
-This repository holds AutoRouter's public docs and its agent setup skill
-(`skills/set-up-autorouter`). The app is closed source and in beta. Download it from
-[autorouter.com](https://autorouter.com).
+It is a Mac app by Fractal Works, Inc. It adds 20+ models to Codex, Claude
+Code and Cursor, plus one more choice in the model picker: AutoRouter, which
+picks the right model for each task. It also works in Claude Desktop, T3 and
+Terminal, and uses the Claude, ChatGPT, Grok and Gemini plans you already pay
+for first.
+
+This repository holds AutoRouter's public docs, a Claude Code plugin, a public
+MCP server config and an agent setup skill. The app is closed source and in
+beta.
 
 [Website](https://autorouter.com) ·
 [Download](https://autorouter.com/AutoRouter.dmg) ·
@@ -17,7 +21,60 @@ This repository holds AutoRouter's public docs and its agent setup skill
 [Privacy](https://autorouter.com/privacy) ·
 [X](https://x.com/Auto_Router)
 
-## Install
+<!-- Related: autorouter-usage (coming soon) -->
+
+## Claude Code plugin
+
+The plugin adds the setup skill and the AutoRouter models MCP server to Claude
+Code (2.1.292 or later). Install it from your shell:
+
+```sh
+claude plugin marketplace add fractal-works/autorouter-docs
+claude plugin install autorouter@fractal-works
+```
+
+Or inside Claude Code:
+
+```text
+/plugin marketplace add fractal-works/autorouter-docs
+/plugin install autorouter@fractal-works
+```
+
+Then run `/autorouter:set-up-autorouter` to install the Mac app and connect
+your tools.
+
+## MCP server (no account needed)
+
+`https://api.autorouter.com/v1/mcp/public` is a read-only MCP server over
+streamable HTTP. It needs no account or key, and runs on any OS. It has two
+tools:
+
+- `list_models` lists the coding models AutoRouter routes between, optionally
+  only those a ChatGPT or Claude plan covers, or one intelligence tier.
+- `recommend_model` says which model AutoRouter would use for a coding task,
+  with two fallbacks and whether each runs on a plan or on credits.
+
+The plugin adds it for you. To add only the server to Claude Code:
+
+```sh
+claude mcp add --transport http autorouter-models https://api.autorouter.com/v1/mcp/public
+```
+
+Other clients that support streamable HTTP can use the same URL. The server's
+card is at
+[autorouter.com/.well-known/mcp/server-card.json](https://autorouter.com/.well-known/mcp/server-card.json).
+
+## Agent skill
+
+`skills/set-up-autorouter` walks a coding agent through installing the Mac
+app, signing in and checking that each tool is connected. Without the plugin,
+add it with:
+
+```sh
+npx skills add fractal-works/autorouter-docs
+```
+
+## Install the app
 
 AutoRouter needs macOS 14 or later. Claude Code needs Node 22.18 or later.
 
@@ -33,14 +90,6 @@ brew install --cask fractal-works/tap/autorouter
 ```
 
 Homebrew 7 loads casks from a tap outside Homebrew only after you trust it.
-
-**Claude Code plugin.** Install the setup skill, then run it:
-
-```sh
-claude plugin install autorouter --marketplace fractal-works/autorouter-docs
-```
-
-In Claude Code, run `/autorouter:set-up-autorouter`.
 
 **Ask your coding agent.** Paste this into Codex or Claude Code:
 
@@ -116,11 +165,11 @@ and MiniMax M3.1 Flash pay per use. The lineup changes.
 
 ## Pricing
 
-| Plan       | Price          | What you get                                                                                                                                                                     |
-| ---------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Free       | $0 a month     | Routing across your ChatGPT and Claude plans                                                                                                                                     |
+| Plan       | Price          | What you get                                                                                                                                                                        |
+| ---------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Free       | $0 a month     | Routing across your ChatGPT and Claude plans                                                                                                                                        |
 | Pro        | $50 a month    | Every other model, with $20 of included usage each month. When a ChatGPT or Claude plan hits its limit, Pro keeps those requests going from the monthly usage until the plan resets |
-| Enterprise | Priced by seat | Everything in Pro, plus rollout through Jamf or another MDM, allowed models, team budgets, zero data retention, spend by team, project or ticket, SSO, SCIM and an audit log     |
+| Enterprise | Priced by seat | Everything in Pro, plus rollout through Jamf or another MDM, allowed models, team budgets, zero data retention, spend by team, project or ticket, SSO, SCIM and an audit log        |
 
 - Paid models are billed at the provider's price plus 10%, from the included
   usage first and then from credits you top up. Credits you buy never expire.
@@ -208,7 +257,8 @@ See [autorouter.com/comparisons](https://autorouter.com/comparisons).
 - Sales: sales@autorouter.com
 
 AutoRouter is made by Fractal Works, Inc.
+
 ## License
 
-The docs and skill in this repository are under the [MIT License](LICENSE).
+The docs, plugin and skill in this repository are under the [MIT License](LICENSE).
 The AutoRouter app is not.
