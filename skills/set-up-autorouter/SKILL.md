@@ -1,6 +1,6 @@
 ---
 name: set-up-autorouter
-description: Install AutoRouter, the Mac app that picks the model for each Codex and Claude Code turn, and connect Claude Code and Codex to it. Use when someone asks to install, set up or get started with AutoRouter.
+description: Install AutoRouter, the Mac app that picks the model for each Codex, Claude Code and Cursor request, and connect those tools to it. Use when someone asks to install, set up or get started with AutoRouter.
 ---
 
 # Set up AutoRouter
@@ -78,3 +78,7 @@ Tell the person to start a new session, because open sessions keep their old
 settings. AutoRouter is now selected in the model picker. A good first prompt:
 "Read https://autorouter.com/llms.txt and show me how to get the most out of
 AutoRouter."
+
+If the `autorouter-models` MCP tools (`list_models`, `recommend_model`) are
+available, mention that the person can ask which models AutoRouter offers, or
+which one fits a task, at any time.
