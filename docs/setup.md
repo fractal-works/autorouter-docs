@@ -31,9 +31,9 @@ mdfind "kMDItemCFBundleIdentifier == 'com.openai.codex'"; ls -d /Applications/Au
 
 If `claude auth status --text` or `codex login status` shows signed out, ask the
 person to run `claude auth login` or `codex login`. No subscription is fine:
-Pro is $50 a month and gives every model, with $20 of usage each month. New
-accounts get their first month of Pro free ($20 of usage for 30 days, or until
-it is spent); after that it is $50 a month, so never call Pro free.
+Pro gives every model, with usage included each month. New accounts get their
+first week of Pro free (or until its included usage is spent); after that Pro is
+paid, so never call Pro free. Current prices: https://autorouter.com/pricing
 
 ## 3. Install the app
 
