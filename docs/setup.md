@@ -5,6 +5,11 @@ Cursor to the best model for each prompt. The app writes the configuration. You 
 it, guide the person through each sign-in, and confirm it worked. Give one
 short instruction at a time.
 
+Per-app details: [Claude Code](setup/claude-code.md), [Codex](setup/codex.md),
+[Cursor](setup/cursor.md), [Claude Desktop](setup/claude-desktop.md),
+[T3 Code](setup/t3.md), [OpenCode](setup/opencode.md), [Pi](setup/pi.md) and
+[Terminal](setup/terminal.md).
+
 Never print tokens or the contents of `~/.claude/settings.json` or
 `~/.codex/config.toml`, and never edit them. Never ask for a password or use
 `sudo`. Every sign-in happens in the browser.
